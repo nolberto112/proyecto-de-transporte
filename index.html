@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transporte de Mercadería | don daniel</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: white;
+}
+
+header .header {
+  background: black;
+  padding: 10px;
+  border-bottom: 2px solid #00c2ff;
+  text-align: center;
+}
+.menu {
+  background: #111;
+  padding: 12px;
+  text-align: center;
+;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #00c2ff;
+}
+
+.marca {
+  display: flex;
+  flex-direction: column; /* logo arriba, título abajo */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.logo {
+  height: 150px;
+  width: auto;
+}
+
+.marca h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 26px;
+  padding: 12px 16px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.hero {
+  padding: 120px 20px;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+              url("galeria/fondo-camion.jpeg");
+  background-size: cover;
+  background-position: 50% 45%;
+  background-repeat: no-repeat;
+}
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #ddd;
+  margin-bottom: 25px;
+}
+
+.hero-contenido {
+  max-width: 700px;
+  margin: auto;
+  background: rgba(0,0,0,0.45);
+  padding: 30px;
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+
+  animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+
+
+.boton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: #00c2ff;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00c2ff;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.card h3 {
+  color: #00c2ff;
+}
+
+/* GALERÍA PROFESIONAL */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #222;
+  transition: 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  border-color: #00c2ff;
+}
+
+footer {
+  background: black;
+  padding: 30px;
+  text-align: center;
+  border-top: 2px solid #00c2ff;
+  margin-top: 40px;
+}
+.ubicacion {
+  background: #111;
+}
+
+.ubicacion-contenedor {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.info-ubicacion {
+  text-align: left;
+}
+
+.info-ubicacion h3 {
+  color: #00c2ff;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .ubicacion-contenedor {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+</head>
+<a href="https://wa.me/51999999999" class="whatsapp">💬</a>
+
+<body>
+
+<header class="header">
+  <div class="marca">
+    <img src="galeria/logo.jpeg" alt="Logo Transporte Don Daniel" class="logo">
+    <h1>Transporte Don Daniel</h1>
+  </div>
+</header>
+
+<nav class="menu">
+  <a href="#">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#galeria">Trabajos</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+
+<section>
+  <h2>¿Por qué elegirnos?</h2>
+  <p>✔ Puntualidad garantizada</p>
+  <p>✔ Transporte seguro</p>
+  <p>✔ Atención rápida por WhatsApp</p>
+  <p>✔ Experiencia en carga pesada</p>
+</section>
+
+
+<section class="hero">
+  <div class="hero-contenido">
+    <h1>Transporte seguro y puntual</h1>
+    <p>Movemos tu mercadería a todo destino</p>
+    <a class="boton" href="https://wa.me/51999999999">Solicitar cotización</a>
+  </div>
+</section>
+
+
+<section>
+<h2>Servicios</h2>
+
+<div class="servicios">
+  <div class="card">
+    <h3>Transporte local</h3>
+    <p>Entrega rápida dentro de la ciudad</p>
+  </div>
+
+  <div class="card">
+    <h3>Envíos nacionales</h3>
+    <p>Traslado seguro a todo el país</p>
+  </div>
+
+  <div class="card">
+    <h3>Carga pesada</h3>
+    <p>Equipos y mercadería de gran volumen</p>
+  </div>
+
+  <div class="card">
+    <h3>Servicio empresarial</h3>
+    <p>Contratos para negocios y empresas</p>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>Trabajos Realizados</h2>
+
+<div class="galeria">
+  <img src="galeria/camion1.jpeg">
+  <img src="galeria/carga.jpeg">
+  <img src="galeria/entrega.jpeg">
+</div>
+<section>
+    <h2>Cobertura</h2>
+    <p>Atendemos en Lima y a nivel nacional, llegando a cada rincón del Perú.</p>
+</section>
+<section class="ubicacion">
+<h2>Ubicación</h2>
+
+<div class="ubicacion-contenedor">
+
+  <div class="info-ubicacion">
+    <h3>Transporte Don Daniel</h3>
+    <p>📍 Lima, Perú</p>
+    <p>🕒 Atención: Lunes a Sábado — 8:00 AM a 10 PM</p>
+    <p>📞 +51 999 999 999</p>
+
+    <a class="boton" target="_blank"
+    href="https://www.google.com/maps?q=Lima,Peru">
+    Cómo llegar
+    </a>
+  </div>
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249743.7328979381!2d-77.15259278796061!3d-12.026589991602728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1770587007914!5m2!1ses!2spe"
+    width="100%"
+    height="320"
+    style="border:0; border-radius:10px;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+
+</div>
+</section>
+
+
+<section>
+<h2>Contacto</h2>
+<p>Teléfono: +51 999 999 999</p>
+<p>Email: contacto@dondaniel.com</p>
+</section>
+
+<footer>
+  <p>📍 Lima, Perú</p>
+  <p>📞 +51 999 999 999</p>
+  <p>✉ contacto@dondaniel.com</p>
+  <p>© 2026 Transporte Don Daniel</p>todos los derechos reservados.
+</footer>
+
+
+</body>
+</html>
