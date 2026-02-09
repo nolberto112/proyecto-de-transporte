@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transporte Don Daniel</title>
+
+<style>
+
+/* ===== ESTILO GENERAL ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
+              url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: black;
+  padding: 15px;
+  border-bottom: 2px solid #00c2ff;
+  text-align: center;
+}
+
+.marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 160px;
+}
+
+.marca h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+/* ===== PORTADA PROFESIONAL ===== */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+              url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-contenido {
+  max-width: 700px;
+  background: rgba(0,0,0,0.5);
+  padding: 40px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  animation: aparecer 1s ease;
+}
+
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #ddd;
+}
+
+/* ===== MENU ===== */
+.menu {
+  background: #111;
+  padding: 14px;
+  text-align: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #00c2ff;
+}
+
+/* ===== SECCIONES ===== */
+section {
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(0,0,0,0.55);
+  margin: 20px;
+  border-radius: 12px;
+}
+
+/* ===== SERVICIOS ===== */
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.card h3 {
+  color: #00c2ff;
+}
+
+/* ===== GALERIA ===== */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #222;
+  transition: 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  border-color: #00c2ff;
+}
+
+/* ===== UBICACION ===== */
+.ubicacion-contenedor {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.info-ubicacion {
+  text-align: left;
+}
+
+.info-ubicacion h3 {
+  color: #00c2ff;
+}
+
+/* ===== BOTON ===== */
+.boton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: #00c2ff;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00c2ff;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 26px;
+  padding: 12px 16px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: black;
+  padding: 30px;
+  text-align: center;
+  border-top: 2px solid #00c2ff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .ubicacion-contenedor {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="https://wa.me/51999999999" class="whatsapp">💬</a>
+
+<header class="header">
+  <div class="marca">
+    <img src="galeria/logo.jpeg" class="logo">
+    <h1>Transporte Don Daniel</h1>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-contenido">
+    <h2>Transporte seguro, rápido y confiable</h2>
+    <p>Movemos tu mercadería en Lima y a todo el Perú con puntualidad garantizada.</p>
+
+    <a class="boton" href="https://wa.me/51999999999">
+      Solicitar cotización
+    </a>
+  </div>
+</section>
+
+<nav class="menu">
+  <a href="#">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#galeria">Trabajos</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<section id="servicios">
+<h2>Servicios</h2>
+
+<div class="servicios">
+  <div class="card">
+    <h3>Transporte local</h3>
+    <p>Entrega rápida dentro de la ciudad</p>
+  </div>
+
+  <div class="card">
+    <h3>Envíos nacionales</h3>
+    <p>Traslado seguro a todo el país</p>
+  </div>
+
+  <div class="card">
+    <h3>Carga pesada</h3>
+    <p>Equipos y mercadería de gran volumen</p>
+  </div>
+
+  <div class="card">
+    <h3>Servicio empresarial</h3>
+    <p>Contratos para empresas</p>
+  </div>
+</div>
+</section>
+
+<section id="galeria">
+<h2>Trabajos Realizados</h2>
+
+<div class="galeria">
+  <img src="galeria/camion1.jpeg">
+  <img src="galeria/carga.jpeg">
+  <img src="galeria/entrega.jpeg">
+</div>
+</section>
+
+<section>
+<h2>Cobertura</h2>
+<p>Atendemos en Lima y a nivel nacional.</p>
+</section>
+
+<section>
+<h2>Ubicación</h2>
+
+<div class="ubicacion-contenedor">
+
+<div class="info-ubicacion">
+<h3>Transporte Don Daniel</h3>
+<p>📍 Lima, Perú</p>
+<p>🕒 Lunes a Sábado — 8:00 AM a 10 PM</p>
+<p>📞 +51 999 999 999</p>
+
+<a class="boton" target="_blank"
+href="https://www.google.com/maps?q=Lima,Peru">
+Cómo llegar
+</a>
+</div>
+
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249743.7328979381!2d-77.15259278796061!3d-12.026589991602728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses!2spe!4v1770587007914!5m2!1ses!2spe"
+width="100%"
+height="320"
+style="border:0; border-radius:10px;"
+loading="lazy">
+</iframe>
+
+</div>
+</section>
+
+<section id="contacto">
+<h2>Contacto</h2>
+<p>📞 +51 999 999 999</p>
+<p>✉ contacto@dondaniel.com</p>
+</section>
+
+<footer>
+<p>© 2026 Transporte Don Daniel — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
+
