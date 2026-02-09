@@ -19,6 +19,15 @@ body {
   background-attachment: fixed;
 }
 
+body {
+  animation: fondoMover 20s infinite alternate;
+}
+
+@keyframes fondoMover {
+  from { background-position: center; }
+  to { background-position: top; }
+}
+
 /* ===== HEADER ===== */
 .header {
   background: black;
@@ -76,12 +85,20 @@ body {
   font-size: 18px;
   color: #ddd;
 }
+.hero {
+  animation: zoomHero 20s ease-in-out infinite alternate;
+}
+
+@keyframes zoomHero {
+  from { background-size: 100%; }
+  to { background-size: 110%; }
+}
 
 /* ===== MENU ===== */
 .menu {
-  background: #111;
-  padding: 14px;
-  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .menu a {
@@ -90,6 +107,36 @@ body {
   margin: 0 25px;
   font-weight: bold;
   transition: 0.3s;
+}
+.menu {
+  background: #111;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+}
+
+/* línea luminosa */
+.menu::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: #00c2ff;
+  box-shadow:
+    0 0 10px #00c2ff,
+    0 0 20px rgba(0,194,255,0.6),
+    0 0 40px rgba(0,194,255,0.4);
+}
+.menu::after {
+  animation: brilloMenu 2.5s infinite alternate;
+}
+
+@keyframes brilloMenu {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
 }
 
 .menu a:hover {
@@ -115,20 +162,87 @@ section {
 }
 
 .card {
-  background: #1a1a1a;
+  background: rgba(255, 255, 255, 0.05); /* transparencia tipo vidrio */
   padding: 25px;
-  border-radius: 10px;
-  border: 1px solid #333;
-  transition: 0.3s;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px); /* efecto vidrio */
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+/* elevación + brillo */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0,194,255,0.45);
+  border-color: #00c2ff;
+}
+/* TARJETA 1 → sube recto */
+.servicios .card:nth-child(1):hover {
+  transform: translateY(-12px);
+}
+
+/* TARJETA 2 → gira un poco */
+.servicios .card:nth-child(2):hover {
+  transform: translateY(-12px) rotate(1.5deg);
+}
+
+/* TARJETA 3 → zoom suave */
+.servicios .card:nth-child(3):hover {
+  transform: scale(1.05);
+}
+
+/* TARJETA 4 → sube y se inclina */
+.servicios .card:nth-child(4):hover {
+  transform: translateY(-12px) rotate(-1.5deg);
+}
+
+/* luz que pasa por encima */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card:hover::before {
+  left: 100%;
 }
 
 .card h3 {
   color: #00c2ff;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-shadow:
+    0 0 5px #00c2ff,
+    0 0 10px #00c2ff,
+    0 0 20px #00c2ff,
+    0 0 40px rgba(0,194,255,0.6);
+  transition: 0.3s;
+}
+
+/* más brillo al pasar el mouse */
+.card:hover h3 {
+  text-shadow:
+    0 0 8px #00c2ff,
+    0 0 15px #00c2ff,
+    0 0 30px #00c2ff,
+    0 0 60px rgba(0,194,255,0.8);
 }
 
 /* ===== GALERIA ===== */
@@ -169,6 +283,17 @@ section {
 .info-ubicacion h3 {
   color: #00c2ff;
 }
+/* ANIMACIÓN AL HACER SCROLL */
+.animar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.animar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ===== BOTON ===== */
 .boton {
@@ -196,9 +321,30 @@ section {
   background: #25D366;
   color: white;
   font-size: 26px;
-  padding: 12px 16px;
+  padding: 14px 18px;
   border-radius: 50%;
   text-decoration: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  z-index: 999;
+  animation: pulsoWhatsApp 2s infinite;
+  transition: 0.3s;
+}
+
+/* al pasar el mouse */
+.whatsapp:hover {
+  transform: scale(1.15);
+}
+
+@keyframes pulsoWhatsApp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37,211,102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(37,211,102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37,211,102, 0);
+  }
 }
 
 /* ===== FOOTER ===== */
@@ -248,7 +394,39 @@ footer {
   <a href="#contacto">Contacto</a>
 </nav>
 
-<section id="servicios">
+<section class="animar">
+<h2>Clientes satisfechos</h2>
+
+<div class="servicios">
+  <div class="card">
+    <p>"Servicio puntual y seguro. Recomendado."</p>
+    <strong>— Empresa Logística Perú</strong>
+  </div>
+
+  <div class="card">
+    <p>"Transportaron mi carga sin problemas."</p>
+    <strong>— Cliente Empresarial</strong>
+  </div>
+
+  <div class="card">
+    <p>"Muy responsables y rápidos."</p>
+    <strong>— Negocio Local</strong>
+  </div>
+</div>
+</section>
+
+<section class="animar">
+<h2>Nuestra experiencia</h2>
+
+<div class="servicios">
+  <div class="card"><h3>+5000</h3><p>Servicios realizados</p></div>
+  <div class="card"><h3>+10000</h3><p>Clientes satisfechos</p></div>
+  <div class="card"><h3>10años</h3><p>De experiencia</p></div>
+</div>
+</section>
+
+
+<section class="animar">
 <h2>Servicios</h2>
 
 <div class="servicios">
@@ -322,10 +500,25 @@ loading="lazy">
 <p>📞 +51 999 999 999</p>
 <p>✉ contacto@dondaniel.com</p>
 </section>
+<a class="boton" href="tel:+51999999999">Llamar ahora</a>
 
 <footer>
 <p>© 2026 Transporte Don Daniel — Todos los derechos reservados</p>
 </footer>
+
+<script>
+const elementos = document.querySelectorAll('.animar');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+elementos.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
